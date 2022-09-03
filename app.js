@@ -4,8 +4,8 @@ import membersRouter from './routers/members.js';
 const app = express();
 const port = 3100;
 
+app.use(express.json());
 app.use('/members', membersRouter);
 app.listen(port, () => {
-  // eslint-disable-next-line no-console
   console.log('server is running..');
 });
