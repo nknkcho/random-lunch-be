@@ -1,5 +1,5 @@
 import Member from '../models/members';
-import statusCodes from '../config/statusCodes';
+import statusCodes from '../constants/statusCodes';
 
 const createMember = async (req, res) => {
   try {
