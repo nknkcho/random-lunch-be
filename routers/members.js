@@ -7,6 +7,6 @@ router.post('/', memberController.createMember);
 // 멤버 조회
 router.get('/', memberController.getMembers);
 // 멤버 삭제
-router.delete('/', memberController.deleteMember);
+router.delete('/:name', memberController.deleteMember);
 
 export default router;
