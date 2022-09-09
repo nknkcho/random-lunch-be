@@ -20,6 +20,15 @@ const Member = {
     }
   },
 
+  getList: async () => {
+    try {
+      const [row] = await db.query('SELECT * FROM members');
+      return row;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
   delete: async name => {
     try {
       await db.execute('DELETE FROM members WHERE name = ?', [name]);
