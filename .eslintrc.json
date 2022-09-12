@@ -30,13 +30,6 @@
     "prettier/prettier": "error",
     "no-unused-vars": "error",
     "no-var": "error",
-    // "prefer-const": [
-    //   "error",
-    //   {
-    //     "destructuring": "any",
-    //     "ignoreReadBeforeAssign": false
-    //   }
-    // ],
     "func-style": ["error", "expression"]
   }
 }
