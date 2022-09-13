@@ -89,7 +89,9 @@ const deleteMember = async (req, res) => {
       });
     }
     await Member.delete(name);
-    return res.status(statusCodes.NO_CONTENT);
+    return res.status(statusCodes.OK).send({
+      message: 'DELETED',
+    });
   } catch (error) {
     res.status(error.status || statusCodes.INTERNAL_SERVER).send({
       message: error.message || 'UNKNOWN_ERROR',
