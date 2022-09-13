@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --es-module-specifier-resolution=node app.js"
+    "dev": "nodemon --es-module-specifier-resolution=node app.js",
+    "start": "node --es-module-specifier-resolution=node app.js"
   },
   "repository": {
     "type": "git",
