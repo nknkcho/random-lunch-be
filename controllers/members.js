@@ -4,20 +4,21 @@ import statusCodes from '../constants/statusCodes';
 const createMember = async (req, res) => {
   try {
     const { name } = req.body;
-    if (name.length === 0) {
+    const washedName = name.replace(/[&/\\#,+()$~%.'":*?<>{}]/g, '');
+    if (washedName.length === 0) {
       return await Promise.reject({
         message: 'BAD_REQUEST',
         status: statusCodes.BAD_REQUEST,
       });
     }
-    const searchName = await Member.searchName(name);
+    const searchName = await Member.searchName(washedName);
     if (searchName.length > 0) {
       return await Promise.reject({
         message: 'CONFLICT',
         status: statusCodes.CONFLICT,
       });
     }
-    const createdMemberData = await Member.create(name);
+    const createdMemberData = await Member.create(washedName);
     return res.status(statusCodes.CREATED).send(createdMemberData);
   } catch (error) {
     res.status(error.status || statusCodes.INTERNAL_SERVER).send({
