@@ -16,7 +16,7 @@
 [🌎 데모 링크](https://random-lunch-nttjxsjdw-nknkcho.vercel.app/)
 
 > ## API
-[🌎 api](https://backend.randomlunch.site)
+https://backend.randomlunch.site
 
 > ## 폴더 구조
 
