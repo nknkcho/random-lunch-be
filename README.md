@@ -101,7 +101,7 @@ shuffledMemberList.forEach((item, index) => {
       memberListResult[index].push(item);
     });
 ```
-
+- GET 요청 api : `backend.randomlunch.site/members?groups=4&groupSize=3`
 
 > ## 기술 스택
 
