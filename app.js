@@ -9,7 +9,7 @@ import './config/env.js';
 const app = express();
 const port = 3100;
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: process.env.CLIENT,
 };
 const production = process.env.NODE_ENV === 'production';
 
@@ -19,9 +19,9 @@ app.use('/members', membersRouter);
 
 if (production) {
   const options = {
-    ca: fs.readFileSync('/etc/letsencrypt/live/backend.randomlunch.site/fullchain.pem'),
-    key: fs.readFileSync('/etc/letsencrypt/live/backend.randomlunch.site/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/backend.randomlunch.site/cert.pem'),
+    ca: fs.readFileSync(process.env.HTTPS_CA),
+    key: fs.readFileSync(process.env.HTTPS_KEY),
+    cert: fs.readFileSync(process.env.HTTPS_CERT),
   };
   https.createServer(options, app).listen(port, () => {
     console.log('https is running..');
