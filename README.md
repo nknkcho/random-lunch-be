@@ -13,7 +13,7 @@
 
 > ## 데모
 
-[🌎 데모 링크](https://random-lunch-nttjxsjdw-nknkcho.vercel.app/)
+[🌎 데모 링크](https://random-lunch-fe.vercel.app/)
 
 > ## API
 https://backend.randomlunch.site
